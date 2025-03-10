@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp1", "MauiApp1\MauiApp1\MauiApp1.csproj", "{99C74071-C8AD-457A-8EB0-6D076F9F83AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp1.Droid", "MauiApp1\MauiApp1.Droid\MauiApp1.Droid.csproj", "{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp1.iOS", "MauiApp1\MauiApp1.iOS\MauiApp1.iOS.csproj", "{F7FF8224-999B-443D-866D-796862BEB324}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99C74071-C8AD-457A-8EB0-6D076F9F83AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C74071-C8AD-457A-8EB0-6D076F9F83AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C74071-C8AD-457A-8EB0-6D076F9F83AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C74071-C8AD-457A-8EB0-6D076F9F83AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6A58F9-CC0A-43EF-B407-B4C6C89D36B1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F7FF8224-999B-443D-866D-796862BEB324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7FF8224-999B-443D-866D-796862BEB324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7FF8224-999B-443D-866D-796862BEB324}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F7FF8224-999B-443D-866D-796862BEB324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7FF8224-999B-443D-866D-796862BEB324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7FF8224-999B-443D-866D-796862BEB324}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12B3C8B1-4DDE-4052-B1C7-196072E6DC7E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<FlyoutPage
+    x:Class="MauiApp1.MainFlyoutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MainFlyoutPage">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <VerticalStackLayout Spacing="10">
+                <Button Clicked="MainPage_OnClicked" Text="Main Page" />
+                <Button Clicked="NewPage1_OnClicked" Text="New Page 1" />
+            </VerticalStackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+</FlyoutPage>
