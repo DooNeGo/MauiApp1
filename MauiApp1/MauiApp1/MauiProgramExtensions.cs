@@ -22,7 +22,7 @@ public static class MauiProgramExtensions
 					.RegisterForNavigation<MainFlyoutPage>())
 				.UsePopupNavigation()
 				.UsePageEventsInRegions()
-				.OnAppStart("/MainFlyoutPage/NavigationPage/MainPage"))
+				.OnAppStart("NavigationPage/MainPage"))
 			.UseMPowerKitRegions()
 			.ConfigureFonts(fonts =>
 			{

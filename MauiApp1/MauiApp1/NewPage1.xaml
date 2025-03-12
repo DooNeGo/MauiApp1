@@ -15,7 +15,7 @@
                     Margin="10,0,0,0"
                     FontAttributes="Bold"
                     FontSize="16"
-                    Text="{x:Binding .}" />
+                    Text="{x:Bind this}" />
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
