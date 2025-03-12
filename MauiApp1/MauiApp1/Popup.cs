@@ -65,21 +65,23 @@ public class Popup : ContentView
 
     #endregion
     
+    private readonly INavigationPopupService _navigationPopupService;
+    
     private PopupPage? _popupPage;
 
     public Popup()
     {
         base.IsVisible = false;
         base.BackgroundColor = Colors.Transparent;
+        
+        _navigationPopupService = ServiceProvider.GetRequiredService<INavigationPopupService>();
     }
     
     public event EventHandler? Appearing;
 
     private static IServiceProvider ServiceProvider =>
         Application.Current?.Handler?.MauiContext?.Services ?? throw new InvalidOperationException();
-
-    public bool ClosingFromPopupPage { get; set; }
-
+    
     private static PopupPage CreatePopupPage(Popup popup) => new()
     {
         Content = popup.Content,
@@ -90,19 +92,17 @@ public class Popup : ContentView
     
     private void UpdateVisibility(bool isVisible)
     {
-        var popupNavigation = ServiceProvider.GetRequiredService<INavigationPopupService>();
-
         if (isVisible)
         {
-            ShowPopup(popupNavigation);
+            ShowPopup();
         }
         else
         {
-            HidePopup(popupNavigation);
+            HidePopup();
         }
     }
 
-    private void ShowPopup(INavigationPopupService popupNavigation)
+    private void ShowPopup()
     {
         if (_popupPage is not null) return;
         
@@ -110,30 +110,24 @@ public class Popup : ContentView
         _popupPage.Appearing += OnAppearing;
         _popupPage.BackgroundClicked += OnBackgroundClicked;
     
-        popupNavigation.ShowPopupAsync(_popupPage).SafeFireAndForget();
+        _navigationPopupService.ShowPopupAsync(_popupPage).SafeFireAndForget();
     }
 
-    private void HidePopup(INavigationPopupService popupNavigation)
+    private void HidePopup()
     {
         if (_popupPage is null) return;
         
+        _navigationPopupService.HidePopupAsync(_popupPage).SafeFireAndForget();
+        
         _popupPage.Appearing -= OnAppearing;
         _popupPage.BackgroundClicked -= OnBackgroundClicked;
-    
-        if (!ClosingFromPopupPage)
-        {
-            popupNavigation.HidePopupAsync(_popupPage).SafeFireAndForget();
-        }
-    
         _popupPage = null;
-        ClosingFromPopupPage = false;
     }
     
     private void OnAppearing(object? sender, EventArgs e) => Appearing?.Invoke(this, e);
 
     private void OnBackgroundClicked(object? sender, RoutedEventArgs args)
     {
-        ClosingFromPopupPage = true;
         IsVisible = false;
     }
 }
