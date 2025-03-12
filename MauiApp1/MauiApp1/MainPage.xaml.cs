@@ -44,8 +44,7 @@ public sealed partial class MainPage : ILoadedAsyncAware
         }
         else
         { 
-            // Problem here
-            await _navigationPopupService.ShowPopupAsync(_popupPageTest);
+            Popup.IsVisible = true;
         }
     }
 }
